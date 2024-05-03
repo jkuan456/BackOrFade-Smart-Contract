@@ -16,8 +16,6 @@ contract PerpetualDEX is Ownable {
         bool isOpen; // Flag indicating if the contract is open
         string team;
     }
-
-
     //
 
 
@@ -26,9 +24,11 @@ contract PerpetualDEX is Ownable {
     // }
 
 
-    mapping(uint256 => uint256) qunatity;
+    mapping(uint256 => uint256) quantity;
     mapping(address => mapping(uint256 => PerpContract)) public contracts; // Mapping for perpetual contracts
     mapping(address => uint256) public contractCount; // Number of contracts per address
+
+    mapping(string => uint) public rankings;
 
 
     AggregatorV3Interface public priceFeed; // Chainlink price feed for ELO rankings
@@ -36,6 +36,12 @@ contract PerpetualDEX is Ownable {
 
     constructor(address _priceFeedAddress) Ownable(msg.sender) {
         priceFeed = AggregatorV3Interface(_priceFeedAddress);
+
+        // Initialise Test Values
+        rankings["Arsenal"] = 1900;
+        rankings["Chelsea"] = 2000;
+        rankings["Man City"] = 1800;
+
     }
 
 
