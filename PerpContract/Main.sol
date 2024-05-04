@@ -47,8 +47,8 @@ contract PerpetualDEX is Ownable {
         require(msg.value > 0, "Value must be greater than zero");
 
         uint256 contractId = contractCount[msg.sender] + 1;
-        //uint256 elo = getEloRanking(_team);
-        uint256 elo = rankings[_team];
+        uint256 elo = getEloRanking(_team);
+        //uint256 elo = rankings[_team];
         require(elo > 0, "Team does not exist");
 
         uint256 perpAmount = msg.value / elo;
@@ -88,8 +88,8 @@ contract PerpetualDEX is Ownable {
     function calcPayout(uint256 _contractId) public view returns (uint256) {
         PerpContract storage existingContract = contracts[msg.sender][_contractId];
         string memory team = existingContract.team;
-        //uint256 eloVal = getEloRanking(team);
-        uint256 eloVal = rankings[team];
+        uint256 eloVal = getEloRanking(team);
+        //uint256 eloVal = rankings[team];
 
         uint256 balance = getBalance();
         uint256 totalVal = findTotalVal();
@@ -105,8 +105,8 @@ contract PerpetualDEX is Ownable {
         uint256 totalVal = 0;
         for (uint i = 0; i < teamNames.length; i++) {
             string memory team = teamNames[i];
-            //uint256 eloVal = getEloRanking(team);
-            uint256 eloVal = rankings[team];
+            uint256 eloVal = getEloRanking(team);
+            //uint256 eloVal = rankings[team];
             totalVal += quantitiesLive[team]*eloVal;
         }
 

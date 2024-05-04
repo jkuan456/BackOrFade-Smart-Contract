@@ -502,11 +502,11 @@
 			]
 		},
 		"PerpContract/Main.sol": {
-			"keccak256": "0x389210f2ab539e7d30c4afd56fdc52e14cb1525aefed572fb3cac15781563248",
+			"keccak256": "0x2e2f7cb7106cdb573b0f5685c5a5b010733b8878ef034a0b45e94dd5bf4c77c0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7030eb9a663eef38734b5c4421c598cebc0ca7090cabbdc3629993594640cb9f",
-				"dweb:/ipfs/QmVwcfEsm7THNWgzU2EhhKkfRyn7DETWTeDAzsXJwh3cAB"
+				"bzz-raw://e3f3d1739f1297ef3560251f90796485be8e1965fbbbf3510addd5259e4c7a3c",
+				"dweb:/ipfs/QmeHx47erDfCzF5gyVWz4WG8bbvamVZy8PZPbvLsKSsCHX"
 			]
 		}
 	},
