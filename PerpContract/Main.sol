@@ -30,6 +30,7 @@ contract PerpetualDEX is Ownable {
     mapping(address => uint256) public contractCount; // Number of contracts per address
 
     mapping(string => uint) public rankings;
+    mapping(string => uint256) public quantitiesLive;
 
     uint256 totalPool = 100000;
 
@@ -66,6 +67,8 @@ contract PerpetualDEX is Ownable {
 
         // Increment contract count for the address
         contractCount[msg.sender]++;
+        quantitiesLive[_team] += newContract.quantity;
+
     }
 
 

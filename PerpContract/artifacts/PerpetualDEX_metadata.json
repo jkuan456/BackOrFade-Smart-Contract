@@ -216,6 +216,25 @@
 						"type": "string"
 					}
 				],
+				"name": "quantitiesLive",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"name": "rankings",
 				"outputs": [
 					{
@@ -353,11 +372,11 @@
 			]
 		},
 		"PerpContract/Main.sol": {
-			"keccak256": "0xd72efcec753de9dc94a05c418e58478688217253b469002d008249175f3bcf51",
+			"keccak256": "0x125dd838d6cfbdd799ab24b2c528c6e686c265991b7380b715ddd9b0b503cc80",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57e42a8c6ddc733de8ffafe6716706c934d732663fbe96b6a08080d40dc79650",
-				"dweb:/ipfs/Qmc9PphF7E7yAmLMSDkQBdvp7PDXPt5a1PUyYgQocnXvJc"
+				"bzz-raw://e2c3dfb4fdb6dec971db27c7fc8910a3030a32be8dddda2ab5f55e465a3c0866",
+				"dweb:/ipfs/QmUy9rwycrPH9pzpKWKsuJrHg8uLmAhC7a8iwgLaBtGNt1"
 			]
 		}
 	},
