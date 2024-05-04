@@ -60,6 +60,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_teamName",
+						"type": "string"
+					}
+				],
+				"name": "addTeamName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes",
 						"name": "b",
 						"type": "bytes"
@@ -74,6 +87,25 @@
 					}
 				],
 				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_contractId",
+						"type": "uint256"
+					}
+				],
+				"name": "calcPayout",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -177,6 +209,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "findTotalVal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getBalance",
 				"outputs": [
 					{
@@ -221,6 +266,25 @@
 						"internalType": "bytes",
 						"name": "",
 						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "club",
+						"type": "string"
+					}
+				],
+				"name": "getRanking",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -295,6 +359,43 @@
 				"name": "renounceOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "club",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ranking",
+						"type": "uint256"
+					}
+				],
+				"name": "setRanking",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "teamNames",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -401,11 +502,11 @@
 			]
 		},
 		"PerpContract/Main.sol": {
-			"keccak256": "0x23783ffb05e6817ccb632dec04381e4720bc9aa9413cf6af00633a544c887864",
+			"keccak256": "0x389210f2ab539e7d30c4afd56fdc52e14cb1525aefed572fb3cac15781563248",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7b57f67e6bec00d3b61724275ff600788e2a6d9423724099ef7b183018f0aa79",
-				"dweb:/ipfs/QmRAEBMmYcfXZqqRXL7TfkQbnuBc3T1sbmHHK9nMgDJyhH"
+				"bzz-raw://7030eb9a663eef38734b5c4421c598cebc0ca7090cabbdc3629993594640cb9f",
+				"dweb:/ipfs/QmVwcfEsm7THNWgzU2EhhKkfRyn7DETWTeDAzsXJwh3cAB"
 			]
 		}
 	},
