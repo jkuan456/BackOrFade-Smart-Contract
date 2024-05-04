@@ -11,10 +11,11 @@ contract PerpetualDEX is Ownable {
     struct PerpContract {
         address longParty; // Address of the long party
         bool isBack;
-        uint256 value; // Value of the perpetual contract
+        uint256 quantity; // Value of the perpetual contract
         uint256 fundingRate; // Funding rate for the contract
         bool isOpen; // Flag indicating if the contract is open
         string team;
+        uint256 initialElo;
     }
     //
 
@@ -30,6 +31,7 @@ contract PerpetualDEX is Ownable {
 
     mapping(string => uint) public rankings;
 
+    uint256 totalPool = 100000;
 
     AggregatorV3Interface public priceFeed; // Chainlink price feed for ELO rankings
 
@@ -46,21 +48,19 @@ contract PerpetualDEX is Ownable {
 
 
     // Function to open a perpetual contract
-    function openContract(address _shortParty, bool isBack) external payable {
+    function openContract(string memory _team) public payable {
         require(msg.value > 0, "Value must be greater than zero");
-        require(_shortParty != address(0), "Invalid short party address");
-
 
         uint256 contractId = contractCount[msg.sender] + 1;
 
-
-
+        uint256 perpAmount = msg.value/rankings[_team];
 
         // Create a new perpetual contract
         PerpContract storage newContract = contracts[msg.sender][contractId];
         newContract.longParty = msg.sender;
-        newContract.isBack = isBack; // fadeh
-        newContract.value = msg.value;
+        newContract.team = _team;
+        newContract.quantity = perpAmount;
+        newContract.initialElo = rankings[_team];
         newContract.isOpen = true;
 
 
@@ -74,18 +74,24 @@ contract PerpetualDEX is Ownable {
         PerpContract storage existingContract = contracts[msg.sender][_contractId];
         require(existingContract.isOpen, "Contract is not open");
         require(existingContract.longParty == msg.sender, "Only long party can close the contract");
+        string memory team = existingContract.team;
+        uint256 eloVal = rankings[team];
 
+        uint256 balance = getBalance();
 
         // Calculate payout based on contract value and funding rate
-        uint256 payout = existingContract.value + (existingContract.value * existingContract.fundingRate);
+        uint256 payout = totalPool/eloVal*balance*existingContract.quantity;
        
         // Transfer payout to short party
         payable(msg.sender).transfer(payout);
        
-
-
         // Close the contract
         existingContract.isOpen = false;
+    }
+
+
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
     }
 
 

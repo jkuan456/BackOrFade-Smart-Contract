@@ -116,7 +116,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "quantity",
 						"type": "uint256"
 					},
 					{
@@ -133,6 +133,24 @@
 						"internalType": "string",
 						"name": "team",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "initialElo",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -154,14 +172,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_shortParty",
-						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "isBack",
-						"type": "bool"
+						"internalType": "string",
+						"name": "_team",
+						"type": "string"
 					}
 				],
 				"name": "openContract",
@@ -340,11 +353,11 @@
 			]
 		},
 		"PerpContract/Main.sol": {
-			"keccak256": "0x1b7912d3d66cfab0e4dce54294f132704927cf92921c6e353942f2728215f67a",
+			"keccak256": "0xd72efcec753de9dc94a05c418e58478688217253b469002d008249175f3bcf51",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5d639418cd5e0786ec96d5cd80dae225dd98adcf951b35572704326684380565",
-				"dweb:/ipfs/QmdRtSd128qdnoCWtA2WHUH64ETBUui6eYmrNPh75ybr1Q"
+				"bzz-raw://57e42a8c6ddc733de8ffafe6716706c934d732663fbe96b6a08080d40dc79650",
+				"dweb:/ipfs/Qmc9PphF7E7yAmLMSDkQBdvp7PDXPt5a1PUyYgQocnXvJc"
 			]
 		}
 	},
