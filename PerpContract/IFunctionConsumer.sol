@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+// Current 0x92aD948e75f4EC7fDd404E82e7EE185a10353082s
 interface IFunctionConsumer {
     struct ELOInfo {
         bytes elo;

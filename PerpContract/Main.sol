@@ -5,9 +5,11 @@ pragma solidity ^0.8.0;
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
+import "./IFunctionConsumer.sol";
 
 contract PerpetualDEX is Ownable {
+    IFunctionConsumer public eloFeed;
+
     struct PerpContract {
         address longParty; // Address of the long party
         bool isBack;
@@ -17,13 +19,6 @@ contract PerpetualDEX is Ownable {
         string team;
         uint256 initialElo;
     }
-    //
-
-
-    // function calculateImbalance() {
-    //     return false;
-    // }
-
 
     mapping(uint256 => uint256) quantity;
     mapping(address => mapping(uint256 => PerpContract)) public contracts; // Mapping for perpetual contracts
@@ -34,11 +29,9 @@ contract PerpetualDEX is Ownable {
 
     uint256 totalPool = 100000;
 
-    AggregatorV3Interface public priceFeed; // Chainlink price feed for ELO rankings
-
-
+    //0x92aD948e75f4EC7fDd404E82e7EE185a10353082s
     constructor(address _priceFeedAddress) Ownable(msg.sender) {
-        priceFeed = AggregatorV3Interface(_priceFeedAddress);
+        eloFeed = IFunctionConsumer(_priceFeedAddress);
 
         // Initialise Test Values
         rankings["Arsenal"] = 1900;
@@ -109,9 +102,8 @@ contract PerpetualDEX is Ownable {
 
 
     // Function to get the current ELO ranking from Chainlink
-    function getEloRanking() external view returns (int) {
-        (, int price, , , ) = priceFeed.latestRoundData();
-        return price;
+    function getEloRanking(string memory teamId) external view returns (IFunctionConsumer.ELOInfo memory) {
+        return eloFeed.getLatestEloRanking(teamId);
     }
 }
 

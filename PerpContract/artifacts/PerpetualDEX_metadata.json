@@ -145,6 +145,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "eloFeed",
+				"outputs": [
+					{
+						"internalType": "contract IFunctionConsumer",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getBalance",
 				"outputs": [
 					{
@@ -157,13 +170,31 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "teamId",
+						"type": "string"
+					}
+				],
 				"name": "getEloRanking",
 				"outputs": [
 					{
-						"internalType": "int256",
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "elo",
+								"type": "bytes"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IFunctionConsumer.ELOInfo",
 						"name": "",
-						"type": "int256"
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -188,19 +219,6 @@
 				"outputs": [
 					{
 						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "priceFeed",
-				"outputs": [
-					{
-						"internalType": "contract AggregatorV3Interface",
 						"name": "",
 						"type": "address"
 					}
@@ -371,12 +389,20 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"PerpContract/Main.sol": {
-			"keccak256": "0x125dd838d6cfbdd799ab24b2c528c6e686c265991b7380b715ddd9b0b503cc80",
+		"PerpContract/IFunctionConsumer.sol": {
+			"keccak256": "0xd864f4c58bae091c5c6bd1ad528cb9e0c198064040e483b601a59b196684c0e6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e2c3dfb4fdb6dec971db27c7fc8910a3030a32be8dddda2ab5f55e465a3c0866",
-				"dweb:/ipfs/QmUy9rwycrPH9pzpKWKsuJrHg8uLmAhC7a8iwgLaBtGNt1"
+				"bzz-raw://d793c318fd81711db14d3d2dc120e5770a35ee16620f3af13fa4eb54475efa46",
+				"dweb:/ipfs/QmZ2ssbPz3FKC4cUQHRrfi8bSVwHSaoksFUUay7rQPDc1S"
+			]
+		},
+		"PerpContract/Main.sol": {
+			"keccak256": "0x3ae22e0826ac188a1bb384d0c3fc54ac0b209da33fa76b32f79cf60ed75e9ee8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://310fb97a6e3902c6208877e0c30f15e66b6e6ba2274f3842d464f066bf5de662",
+				"dweb:/ipfs/QmQEDVL52YWpQHMkP6CAhr9G5qR87CukLgiRVn5RJ8rAqi"
 			]
 		}
 	},
