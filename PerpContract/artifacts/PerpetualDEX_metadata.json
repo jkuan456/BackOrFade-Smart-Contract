@@ -60,6 +60,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "bytes",
+						"name": "b",
+						"type": "bytes"
+					}
+				],
+				"name": "bytesToUint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "_contractId",
 						"type": "uint256"
@@ -173,28 +192,35 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "teamId",
+						"name": "team",
 						"type": "string"
 					}
 				],
 				"name": "getEloRanking",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "bytes",
-								"name": "elo",
-								"type": "bytes"
-							},
-							{
-								"internalType": "uint256",
-								"name": "timestamp",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct IFunctionConsumer.ELOInfo",
+						"internalType": "uint256",
 						"name": "",
-						"type": "tuple"
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "team",
+						"type": "string"
+					}
+				],
+				"name": "getEloRankingAsByte",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
 					}
 				],
 				"stateMutability": "view",
@@ -280,29 +306,6 @@
 					}
 				],
 				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_newRate",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_shortParty",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_contractId",
-						"type": "uint256"
-					}
-				],
-				"name": "updateFundingRate",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -398,11 +401,11 @@
 			]
 		},
 		"PerpContract/Main.sol": {
-			"keccak256": "0x3ae22e0826ac188a1bb384d0c3fc54ac0b209da33fa76b32f79cf60ed75e9ee8",
+			"keccak256": "0x23783ffb05e6817ccb632dec04381e4720bc9aa9413cf6af00633a544c887864",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://310fb97a6e3902c6208877e0c30f15e66b6e6ba2274f3842d464f066bf5de662",
-				"dweb:/ipfs/QmQEDVL52YWpQHMkP6CAhr9G5qR87CukLgiRVn5RJ8rAqi"
+				"bzz-raw://7b57f67e6bec00d3b61724275ff600788e2a6d9423724099ef7b183018f0aa79",
+				"dweb:/ipfs/QmRAEBMmYcfXZqqRXL7TfkQbnuBc3T1sbmHHK9nMgDJyhH"
 			]
 		}
 	},
